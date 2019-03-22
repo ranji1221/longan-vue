@@ -7,6 +7,9 @@ import Home from '../components/home/Home.vue'
 import User from '../components/permission/User.vue'
 import Role from '../components/permission/Role.vue'
 import Permission from '../components/permission/Permission.vue'
+import Video from '../components/document/Video.vue'
+import Voice from '../components/document/Voice.vue'
+
 import Login from '../components/Login.vue'
 
 Vue.use(Router)
@@ -28,13 +31,16 @@ const router = new Router({
 		{	
 			path:'/admin', 
 			name:'admin', 
-			component:Admin, meta:{requireAuth:true}, 
+			component:Admin, 
+			meta:{requireAuth:true}, 
 			redirect: '/admin/home',
 			children : [
 				{path:'home', name:'home', component:Home, meta:{requireAuth:true}},
 				{path:'user', name:'user', component:User, meta:{requireAuth:true}},
 				{path:'role', name:'role', component:Role, meta:{requireAuth:true}},
-				{path:'permission', name:'permission', component:Permission, meta:{requireAuth:true}}
+				{path:'permission', name:'permission', component:Permission, meta:{requireAuth:true}},
+				{path:'video', name:'video', component:Video, meta:{requireAuth:true}},
+				{path:'voice', name:'voice', component:Voice, meta:{requireAuth:true}},
 		]}
 		
 	]

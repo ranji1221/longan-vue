@@ -11,8 +11,8 @@
             <span>权限管理</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="1-1" @click="hello()">用户管理</el-menu-item>
-            <el-menu-item index="1-2" @click="hello2()">角色管理</el-menu-item>
+            <el-menu-item index="1-1" @click="userMgr()">用户管理</el-menu-item>
+            <el-menu-item index="1-2" @click="roleMgr()">角色管理</el-menu-item>
             <el-menu-item index="1-3">选项3</el-menu-item>
             <el-menu-item index="1-4">选项4</el-menu-item>
           </el-menu-item-group>
@@ -21,11 +21,11 @@
         <el-submenu index="2">
           <template slot="title">
             <i class="el-icon-location"></i>
-            <span>导航二</span>
+            <span>文件管理</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="2-1">选项1</el-menu-item>
-            <el-menu-item index="2-2">选项2</el-menu-item>
+            <el-menu-item index="2-1" @click="videoMgr()">视频管理</el-menu-item>
+            <el-menu-item index="2-2" @click="voiceMgr()">音频管理</el-menu-item>
             <el-menu-item index="2-3">选项3</el-menu-item>
             <el-menu-item index="2-4">选项4</el-menu-item>
           </el-menu-item-group>
@@ -45,12 +45,18 @@
       handleClose(key, keyPath) {
         console.log(key, keyPath)
       },
-	  hello(){
-		 this.$router.push({name : 'user'});
-	  },
-	  hello2(){
-		this.$router.push({name : 'user'});
-	  }
+			userMgr(){
+				this.$router.push({name : 'user'});
+			},
+			roleMgr(){
+				this.$router.push({name : 'role'});
+			},
+			videoMgr(){
+				this.$router.push({name : 'video'});
+			},
+			voiceMgr(){
+				this.$router.push({name : 'voice'});
+			}
     }
   }
 </script>
